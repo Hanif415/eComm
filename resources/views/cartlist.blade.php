@@ -23,6 +23,7 @@
                     </div>
                 </div>
             @endforeach
+            <a href="/ordernow" class="btn btn-success mt-3 text-white">Order Now</a> 
         </div>
     </div>
 @endsection
