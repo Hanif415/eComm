@@ -20,30 +20,33 @@
                 <td>Rp. {{ $total + 10000 }}</td>
             </tr>
         </table>
-        <div class="bottom ml-3">
-            <div class="form-group">
-                <textarea placeholder="Enter your address" rows="3" class=" w-50"></textarea>
+        <form action="/orderplace" method="post">
+            @csrf
+            <div class="bottom ml-3">
+                <div class="form-group">
+                    <textarea name="address" placeholder="Enter your address" rows="3" class=" w-50"></textarea>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Online payment
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Emi payment
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Payment on Delivery
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-success mt-3">Order Now</button>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Online payment
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                    Emi payment
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                    Payment on Delivery
-                </label>
-            </div>
-            <button type="submit" class="btn btn-success mt-3">Order Now</button>
-        </div>
+        </form>
     </div>
 </div>
 @endsection
